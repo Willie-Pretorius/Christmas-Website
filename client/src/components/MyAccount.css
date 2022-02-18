@@ -1,0 +1,22 @@
+.myAccPicture {
+  background-image: url("../Images/santa-playing-ukulele-in-front-porch-with-christmas-decoration-background-wallpaper-2560x1080_14.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.myAccount {
+  min-height: 80vh;
+}
+.addForm {
+  background-color: rgba(254, 254, 254, 0.5);
+  border-radius: 30px;
+  min-height: 80vh;
+  margin: 15px;
+}
+.gifteeForm {
+  font-size: 2rem;
+}
+.response {
+  color: red;
+}

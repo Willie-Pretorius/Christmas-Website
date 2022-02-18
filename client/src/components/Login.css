@@ -1,0 +1,29 @@
+.titleText {
+  margin-top: 100px;
+  text-align: left;
+  min-height: 80vh;
+  width: 440px;
+}
+.titleImg {
+  min-height: 80vh;
+  min-width: 100%;
+  object-fit: cover;
+  margin-bottom: 100px;
+}
+.titlePicture {
+  background-image: url("../Images/pexels-photo-1708601.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+.buttonStyle {
+  background-color: #202221;
+  color: #febd6c;
+  border-radius: 30px;
+  padding: 0 10px 0 10px;
+  border-style: solid;
+  border-color: #febd6c;
+}
+.inputStyle {
+  background-color: #2f2420;
+  color: #febd6c;
+}

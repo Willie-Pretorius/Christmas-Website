@@ -1,0 +1,9 @@
+.mailboxPicture {
+  background-image: url("../Images/santa-playing-ukulele-in-front-porch-with-christmas-decoration-background-wallpaper-2560x1080_14.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mailboxDiv {
+  min-height: 80vh;
+}

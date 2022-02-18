@@ -1,0 +1,9 @@
+.gifthubPicture {
+  background-image: url("../Images/photo-1545622783-901effb998a8\ \(2\).jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.giftHub {
+  min-height: 80vh;
+}

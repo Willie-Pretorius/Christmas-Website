@@ -1,0 +1,27 @@
+@import "custom";
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+}
+
+.App-header {
+  background-color: #202221;
+  font-size: calc(10px + 2vmin);
+}
+
+.goldText {
+  color: #febd6c;
+}
+.goldBorder {
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: #febd6c;
+}
+.bold {
+  font-weight: bold;
+}
+.darkbg {
+  background-color: #202221;
+}
