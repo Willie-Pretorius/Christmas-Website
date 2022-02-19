@@ -1,50 +1,10 @@
 const express = require("express");
 const routes = express();
 const { Users, Giftees } = require("../Mongoose/Schemas");
-//Login Page
-routes.post("/login", (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
-  Users.findOne({ username: username }, (err, db) => {
-    res.send({
-      token: JSON.stringify(db._id),
-      username: username,
-    });
-    console.log("successful login");
-  });
-});
 
-routes.post("/Register", (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
-  const email = req.body.email;
-  console.log(email);
-  const user = new Users({
-    username: username,
-    password: password,
-    email: email,
-  });
-  Users.findOne({ username: username }, (err, db) => {
-    if (!db) {
-      user.save((err) => {
-        if (err) {
-          console.log(err);
-        } else {
-          const response = {
-            response: "Successfully Registered",
-            username: username,
-          };
-          console.log(response);
-          res.send(response);
-        }
-      });
-    } else {
-      res.send({ response: "username has been taken" });
-      console.log({ response: "username has been taken" });
-    }
-  });
-});
 //MyAccount Page
+
+//Add Giftee
 routes.post("/addgiftee", (req, res) => {
   const username = req.body.username;
   const name = req.body.name;
@@ -57,7 +17,10 @@ routes.post("/addgiftee", (req, res) => {
   Giftees.findOne({ name: name }, async (err, db) => {
     if (db) {
       console.log("giftee already exists");
-      res.send({ response: name + " " + surname + " already exists." });
+      res.send({
+        response: name + " " + surname + " already exists.",
+        list: [],
+      });
     } else {
       const userId = await Users.findOne({ username: username }).exec();
       const giftee = new Giftees({
@@ -78,7 +41,7 @@ routes.post("/addgiftee", (req, res) => {
               list.push({
                 name: element.name,
                 surname: element.surname,
-                URL: "http://localhost:4000/myWishlist/:" + element._id,
+                URL: "http://localhost:3000/myWishlist/" + element._id,
               });
             });
             console.log(list);
@@ -93,6 +56,8 @@ routes.post("/addgiftee", (req, res) => {
     }
   });
 });
+
+//Fetch Giftee
 routes.post("/fetchgiftee", async (req, res) => {
   const list = [];
   const username = req.body.username;
@@ -102,7 +67,7 @@ routes.post("/fetchgiftee", async (req, res) => {
       list.push({
         name: element.name,
         surname: element.surname,
-        URL: "http://localhost:4000/myWishlist/:" + element._id,
+        URL: "http://localhost:3000/myWishlist/" + element._id,
       });
     });
     console.log(list);

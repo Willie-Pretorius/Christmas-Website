@@ -3,7 +3,10 @@ dotenv.config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const routesHandler = require("./routes/handler.js");
+const usersHandler = require("./routes/users_handler.js");
+const gifteesHandler = require("./routes/giftees_handler.js");
+const wishlistHandler = require("./routes/wishlist_handler.js");
+const userGiftListsHandler = require("./routes/userGiftLists_handler");
 const { json } = require("express");
 const app = express();
 
@@ -19,7 +22,10 @@ mongoose
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
-app.use("/", routesHandler);
+app.use("/", usersHandler);
+app.use("/", gifteesHandler);
+app.use("/", wishlistHandler);
+app.use("/", userGiftListsHandler);
 app.listen(process.env.PORT, () => {
   console.log("API is running on http://localhost:" + process.env.PORT);
 });

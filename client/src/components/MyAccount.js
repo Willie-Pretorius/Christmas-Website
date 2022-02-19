@@ -2,15 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./MyAccount.css";
 import MyAccountForm from "./MyAccountForm";
-// async function fetchGiftee(credentials) {
-//   return fetch("http://localhost:4000/fetchgiftee", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(credentials),
-//   }).then((data) => data.json());
-// }
 
 function MyAccount() {
   const token = JSON.parse(sessionStorage.getItem("token"));
@@ -37,7 +28,7 @@ function MyAccount() {
     setGifteeList(items);
   };
   // const arr = gifteeList.list;
-  // console.log(items);
+  console.log(gifteeList);
   return (
     <div className='myAccount   myAccPicture'>
       <h1>My Account</h1>
